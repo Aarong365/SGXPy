@@ -1,3 +1,9 @@
+Official implementation of "SGXPy: Protecting integrity of Python applications with Intel SGX" by Denghui Zhang, Guosai Wang, Wei Xu, Kevin Gao.
+
+Paper Link: https://ieeexplore.ieee.org/document/8945648
+
+Python is the programming language of choice for many data scientists, and thus widely used in cloud computing platforms. Untrusted cloud environments have imposed challenges to the security of Python applications. Intel SGX (Intel Software Guard eXtensions) provides an encrypted enclave for securing applications, and a library OS technology can be adopted to run legacy applications inside these enclaves. However, this technology has some limitations: (i) It is difficult to ensure the integrity of Python applications as a result of the complex dependencies among modules. (ii) Python applications often spawn new processes, and file access permissions need to be handled separately in the parent-child process. To address these limitations, we present SGXPy (SGX Python), an integrity preserving tool for Python applications. The design of SGXPy makes it possible to obtain dependencies of applications and assign file access permissions among processes automatically: (i) During the build stage, SGXPy constructs dependency manifests of Python applications based on the ptrace mechanism. (ii)To enhance access control among processes, SGXPy utilizes process introspection to cascading manifests for each process. With the proposed framework, sophisticated Python applications such as NumPy and a web server can now run unmodified with the library OS. We present a series of experiments to evaluate performance overheads of Python applications in SGX. Our evaluation of NumPy submodules shows SGXPy can pass 97.60% of unit testing, even with the isolated environment and limited memory of SGX.
+
 * SGXPYTHON
 
 Running Unmodified Applications on SGX with Encrypted Data and Program
